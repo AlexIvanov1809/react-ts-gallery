@@ -1,6 +1,6 @@
 .navigation {
 	background: rgba(255, 255, 255, 0.4);
-	border-radius: 5px;
+	border-radius: $border-radius;
 	padding: 5px;
 	display: inline-flex;
 	gap: 5px;
@@ -16,7 +16,7 @@
 		background-size: 52% auto;
 		transition: opacity 0.3s, background-color 0.3s;
 		cursor: pointer;
-		border-radius: 5px;
+		border-radius: $border-radius;
 
 		&Right {
 			background-image: url("./images/arrow-right.svg");

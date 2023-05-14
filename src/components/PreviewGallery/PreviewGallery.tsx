@@ -6,12 +6,14 @@ import cn from 'classnames';
 interface PreviewGalleryProps extends CommonClassProps {
   activePhotoIndex: number;
   photos: Photo[];
+  setNewPhoto: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const PreviewGallery: React.FC<PreviewGalleryProps> = ({
   activePhotoIndex,
   photos,
   className,
+  setNewPhoto,
 }) => {
   if (!photos.length) {
     return null;
@@ -33,18 +35,23 @@ const PreviewGallery: React.FC<PreviewGalleryProps> = ({
       {useMemo(
         () => (
           <ul ref={previewContainer} className={styles.previewGalleryTrack}>
-            {photos.map((photo) => (
-              <li key={photo.id} className={styles.previewGalleryPreview}>
-                <img
-                  src={photo.preview}
-                  alt={photo.description}
-                  className={styles.previewGalleryImage}
-                />
+            {photos.map((photo, index) => (
+              <li key={photo.id}>
+                <button
+                  className={styles.previewGalleryPreview}
+                  onClick={() => setNewPhoto(index)}
+                >
+                  <img
+                    src={photo.preview}
+                    alt={photo.description}
+                    className={styles.previewGalleryImage}
+                  />
+                </button>
               </li>
             ))}
           </ul>
         ),
-        [],
+        [photos],
       )}
       <div className={styles.previewGalleryCover}>
         {activePhotoIndex + 1} / {photos.length}

@@ -14,11 +14,15 @@
 	&Preview {
 		min-width: 154px;
 		margin: 5px;
+		border: none;
+		padding: 0;
 		display: inline-block;
 		height: 80px;
-		background: #97a9b2;
-		border-radius: 5px;
+		background: $image-background-color;
+		border-radius: $border-radius;
 		overflow: hidden;
+		background: none;
+		cursor: pointer;
 	}
 
 	&Image {
@@ -37,7 +41,7 @@
 		left: 50%;
 		top: 0;
 		transform: translate(-50%, 0);
-		border-radius: 5px;
+		border-radius: $border-radius;
 		display: flex;
 		align-items: center;
 		justify-content: center;

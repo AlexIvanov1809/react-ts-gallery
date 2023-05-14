@@ -1,5 +1,5 @@
 import PreviewGallery from './PreviewGallery/PreviewGallery';
 import Navigation from './Navigation/Navigation';
-import MainPhoto from './MainPhoto/MainPhoto';
+import TransitionPhoto from './TransitionPhoto/TransitionPhoto';
 
-export { PreviewGallery, MainPhoto, Navigation };
+export { PreviewGallery, TransitionPhoto, Navigation };
